@@ -3,7 +3,7 @@
     <div class='top-row'>
       <div class='top part'>
         <img v-bind:src='availableParts.heads[selectedHeadIndex].src' title='head'/>
-        <button class='prev-selector'>&#9668;</button>
+        <button v-on:click='selectPreviousHead()' class='prev-selector'>&#9668;</button>
         <button v-on:click='selectNextHead()' class='next-selector'>&#9658;</button>
       </div>
     </div>
@@ -48,6 +48,9 @@
     methods: {
       selectNextHead() {
         this.selectedHeadIndex += 1;
+      },
+      selectPreviousHead() {
+        this.selectedHeadIndex -= 1;
       }
     }
   }
