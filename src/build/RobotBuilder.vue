@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class='content'>
     <div class='top-row'>
-    <button class='add-to-cart' @click='adToCart()'>Add to Cart</button>
+    <button class='add-to-cart' @click='addToCart()'>Add to Cart</button>
       <div class='top part'>
         <div class='robot-name'>
           {{selectedRobot.head.title}}
@@ -35,6 +35,21 @@
         <button @click='selectPreviousBase()' class='prev-selector'>&#9668;</button>
         <button @click='selectNextBase()' class='next-selector'>&#9658;</button>
       </div>
+    </div>
+    <div>
+      <h1>Cart</h1>
+      <table>
+        <thead>
+          <th>Robot</th>
+          <th class='cost'>Cost</th>
+        </thead>
+        <tbody>
+          <tr v-for='(robot, index) in cart' :key='index'>
+            <td>{{robot.head.title}}</td>
+            <td class='cost'>{{robot.cost}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </template>
@@ -224,6 +239,14 @@
   width: 220px;
   padding: 3px;
   font-size: 16px;
+}
+td, th {
+  text-align: left;
+  padding: 5px;
+  padding-right: 20px;
+}
+.cost {
+  text-align: right;
 }
 </style>
 
