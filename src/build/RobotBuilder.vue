@@ -2,7 +2,7 @@
   <div class='content'>
     <div class='top-row'>
     <button class='add-to-cart' @click='addToCart()'>Add to Cart</button>
-      <div class='top part' :class='[saleBorderClass]'>
+      <div :class='[saleBorderClass, "top", "part"]'>
         <div class='robot-name'>
           {{selectedRobot.head.title}}
           <span v-if='selectedRobot.head.onSale' class='sale'>Sale!</span>
