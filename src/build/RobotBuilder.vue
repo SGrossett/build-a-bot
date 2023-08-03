@@ -2,7 +2,7 @@
   <div class='content'>
     <div class='top-row'>
     <button class='add-to-cart' @click='addToCart()'>Add to Cart</button>
-      <div class='top part' :style='headBorderStyle'>
+      <div class='top part' :class="{'sale-border' : 'selectedRobot.head.onSale'}">
         <div class='robot-name'>
           {{selectedRobot.head.title}}
           <span v-if='selectedRobot.head.onSale' class='sale'>Sale!</span>
@@ -252,6 +252,9 @@ td, th {
 }
 .cost {
   text-align: right;
+}
+.sale-border {
+  border: 3px solid #f00;
 }
 </style>
 
