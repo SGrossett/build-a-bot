@@ -140,7 +140,7 @@
   }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 .part {
   position: relative;
   width:165px;
